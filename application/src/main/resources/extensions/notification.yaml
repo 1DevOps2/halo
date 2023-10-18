@@ -3,8 +3,8 @@ kind: NotifierDescriptor
 metadata:
   name: default-email-notifier
 spec:
-  displayName: '邮件通知'
-  description: '通过邮件将通知发送给用户'
+  displayName: 'Email Notification'
+  description: 'Send notification to user via email'
   notifierExtName: 'halo-email-notifier'
   senderSettingRef:
     name: 'notifier-setting-for-email'
@@ -17,39 +17,39 @@ metadata:
 spec:
   forms:
     - group: sender
-      label: 发件设置
+      label: Shipping settings
       formSchema:
         - $formkit: checkbox
-          label: "启用邮件通知器"
+          label: "Enable email notifier"
           value: false
           name: enable
         - $formkit: text
           if: "$enable"
-          label: "用户名"
+          label: "username"
           name: username
           validation: required
         - $formkit: password
           if: "$enable"
-          label: "密码"
+          label: "password"
           name: password
           validation: required
         - $formkit: text
           if: "$enable"
-          label: "显示名称"
+          label: "display name"
           name: displayName
         - $formkit: text
           if: "$enable"
-          label: "SMTP 服务器地址"
+          label: "SMTP server address"
           name: host
           validation: required
         - $formkit: text
           if: "$enable"
-          label: "端口号"
+          label: "port"
           name: port
           validation: required
         - $formkit: select
           if: "$enable"
-          label: "加密方式"
+          label: "encryption"
           name: encryption
           value: "SSL"
           options:
@@ -57,7 +57,7 @@ spec:
               value: "SSL"
             - label: "TLS"
               value: "TLS"
-            - label: "不加密"
+            - label: "No encryption"
               value: "NONE"
 ---
 apiVersion: notification.halo.run/v1alpha1
@@ -65,9 +65,8 @@ kind: ReasonType
 metadata:
   name: new-comment-on-post
 spec:
-  displayName: "我的文章收到新评论"
-  description: "如果有读者在你的文章下方留下了新的评论，你将会收到一条通知，告诉你有新的评论。
-  这个通知事件可以帮助你及时了解读者对你的文章的反馈，以便你更好地与读者互动，提高文章的质量和受欢迎程度。"
+  displayName: "My article recieved new comments"
+  description: "If a reader leaves a new comment below your article, you will receive a notification telling you that there is a new comment. This notification event can help you keep abreast of readers' feedback on your articles so that you can better interact with readers and improve the quality and popularity of your articles."
   properties:
     - name: postName
       type: string
@@ -91,8 +90,8 @@ kind: ReasonType
 metadata:
   name: new-comment-on-single-page
 spec:
-  displayName: "我的自定义页面收到新评论"
-  description: "当你创建的自定义页面收到新评论时，你将会收到一条通知，告诉你有新的评论。"
+  displayName: "My custom page received new comments"
+  description: "When a custom page you create receives a new comment, you will receive a notification letting you know there is a new comment."
   properties:
     - name: pageName
       type: string
@@ -116,8 +115,8 @@ kind: ReasonType
 metadata:
   name: someone-replied-to-you
 spec:
-  displayName: "有人回复了我"
-  description: "如果有其他用户回复了你的评论，你将会收到一条通知，告诉你有人回复了你。"
+  displayName: "Someone replied to me"
+  description: "If another user replies to your comment, you will receive a notification letting you know that someone has replied to you."
   properties:
     - name: commentName
       type: string
