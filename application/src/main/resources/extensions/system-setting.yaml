@@ -5,14 +5,14 @@ metadata:
 spec:
   forms:
     - group: basic
-      label: 基本设置
+      label: basic settings
       formSchema:
         - $formkit: text
-          label: "站点标题"
+          label: "site title"
           name: title
           validation: required
         - $formkit: text
-          label: "站点副标题"
+          label: "Site subtitle"
           name: subtitle
         - $formkit: attachment
           label: Logo
@@ -25,111 +25,111 @@ spec:
           accepts:
             - 'image/*'
     - group: post
-      label: 文章设置
+      label: Article settings
       formSchema:
         - $formkit: number
-          label: "文章列表显示条数"
+          label: "Article list display number"
           name: postPageSize
           value: 10
           min: 1
           max: 100
           validation: required | max:100
         - $formkit: number
-          label: "归档页文章显示条数"
+          label: "The number of articles displayed on the archive page"
           name: archivePageSize
           value: 10
           min: 1
           max: 100
           validation: required | max:100
         - $formkit: number
-          label: "分类页文章显示条数"
+          label: "The number of articles displayed on the category page"
           name: categoryPageSize
           value: 10
           min: 1
           max: 100
           validation: required | max:100
         - $formkit: number
-          label: "标签页文章显示条数"
+          label: "The number of articles displayed on the tab page"
           name: tagPageSize
           value: 10
           min: 1
           max: 100
           validation: required
         - $formkit: select
-          label: "别名生成策略"
+          label: "Alias generation strategy"
           name: slugGenerationStrategy
           value: 'generateByTitle'
           options:
-            - label: '根据标题'
+            - label: 'According to the title'
               value: 'generateByTitle'
-            - label: '时间戳'
+            - label: 'Timestamp'
               value: 'timestamp'
             - label: 'Short UUID'
               value: 'shortUUID'
             - label: 'UUID'
               value: 'UUID'
     - group: seo
-      label: SEO 设置
+      label: SEO set up
       formSchema:
         - $formkit: checkbox
           name: blockSpiders
-          label: "屏蔽搜索引擎"
+          label: "Block search engines"
           value: false
         - $formkit: textarea
           name: keywords
-          label: "站点关键词"
+          label: "Site keywords"
         - $formkit: textarea
           name: description
-          label: "站点描述"
+          label: "site description"
     - group: user
-      label: 用户设置
+      label: user settings
       formSchema:
         - $formkit: checkbox
           name: allowRegistration
-          label: "开放注册"
+          label: "Open registration"
           value: false
         - $formkit: roleSelect
           name: defaultRole
-          label: "默认角色"
+          label: "Default role"
         - $formkit: attachmentPolicySelect
           name: avatarPolicy
-          label: "头像存储位置"
+          label: "Avatar storage location"
           value: "default-policy"
     - group: comment
-      label: 评论设置
+      label: Comment settings
       formSchema:
         - $formkit: checkbox
           name: enable
           value: true
-          label: "启用评论"
+          label: "Enable comments"
         - $formkit: checkbox
           name: requireReviewForNew
           value: true
-          label: "新评论审核"
+          label: "New comment moderation"
         - $formkit: checkbox
           name: systemUserOnly
           value: true
-          label: "仅允许注册用户评论"
+          label: "Only registered users are allowed to comment"
     - group: routeRules
-      label: 主题路由设置
+      label: Topic routing settings
       formSchema:
         - $formkit: text
-          label: "分类页路由前缀"
+          label: "Category page routing prefix"
           value: "categories"
           name: categories
           validation: required | alphanumeric
         - $formkit: text
-          label: "标签页路由前缀"
+          label: "Tab routing prefix"
           value: "tags"
           name: tags
           validation: required | alphanumeric
         - $formkit: text
-          label: "归档页路由前缀"
+          label: "Archive page routing prefix"
           value: "archives"
           name: archives
           validation: required | alphanumeric
         - $formkit: select
-          label: 文章详情页访问规则
+          label: Article details page access rules
           value: '/archives/{slug}'
           options:
             - label: '/archives/{slug}'
@@ -149,23 +149,23 @@ spec:
           name: post
           validation: required
     - group: codeInjection
-      label: 代码注入
+      label: code injection
       formSchema:
         - $formkit: code
           language: html
           height: 200px
-          label: "全局 head 标签"
+          label: "overall situation head Label"
           name: globalHead
-          help: "注入代码到所有页面的 head 标签部分"
+          help: "Inject code into the head tag section of all pages"
         - $formkit: code
           language: html
           height: 200px
-          label: "内容页 head 标签"
+          label: "head"
           name: contentHead
-          help: "注入代码到文章页面和自定义页面的 head 标签部分"
+          help: "Inject code into the head tag section of article pages and custom pages"
         - $formkit: code
           language: html
           height: 200px
-          label: "页脚"
+          label: "footer"
           name: footer
-          help: "注入代码到所有页面的页脚部分"
+          help: "Inject code into the footer of all pages"
