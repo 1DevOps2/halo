@@ -5,7 +5,7 @@ metadata:
   labels:
     rbac.authorization.halo.run/system-reserved: "true"
   annotations:
-    rbac.authorization.halo.run/display-name: "访客"
+    rbac.authorization.halo.run/display-name: "Guest"
 rules: [ ]
 
 ---
@@ -16,7 +16,7 @@ metadata:
   labels:
     rbac.authorization.halo.run/system-reserved: "true"
   annotations:
-    rbac.authorization.halo.run/display-name: "超级管理员"
+    rbac.authorization.halo.run/display-name: "super administrator"
     rbac.authorization.halo.run/ui-permissions: |
       ["*"]
 rules:
