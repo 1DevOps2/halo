@@ -11,7 +11,7 @@ kind: Policy
 metadata:
   name: default-policy
 spec:
-  displayName: 本地存储
+  displayName: local storage
   templateName: local
   configMapName: default-policy-config
 ---
@@ -33,8 +33,8 @@ spec:
       formSchema:
         - $formkit: text
           name: location
-          label: 存储位置
-          help: ~/.halo2/attachments/upload 下的子目录
+          label: storage location
+          help: ~/.halo2/attachments/upload subdirectories under
 ---
 apiVersion: storage.halo.run/v1alpha1
 kind: Group
