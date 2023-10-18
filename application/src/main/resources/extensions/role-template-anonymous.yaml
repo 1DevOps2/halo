@@ -1,7 +1,7 @@
 apiVersion: v1alpha1
 kind: "Role"
 metadata:
-  name: anonymus
+  name: anonymous
   labels:
     halo.run/role-template: "true"
     halo.run/hidden: "true"
